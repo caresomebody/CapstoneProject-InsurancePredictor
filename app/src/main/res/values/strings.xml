@@ -13,4 +13,12 @@
     <string name="sign_up">Sign Up</string>
     <string name="dont_have_account">Don\'t have an account?</string>
     <string name="have_an_account">Already have an account?</string>
+    <string name="let_s_predict_your_insurance_charge_now">Let’s predict your insurance charge now!</string>
+    <string name="predict_now">Predict Now</string>
+    <string name="learn_how_app_name_works">Learn How [App Name] Works</string>
+    <string name="how_it_works">How it Works</string>
+    <string name="history">History</string>
+    <string name="waiting_for_you_to_be_ready">Waiting for you to be ready...</string>
+    <string name="questions_about_yourself">You will be asked to answer some questions about yourself</string>
+    <string name="i_m_ready">I am Ready</string>
 </resources>
