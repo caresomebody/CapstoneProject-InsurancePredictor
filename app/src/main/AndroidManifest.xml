@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.InsurancePredictor">
-        <activity android:name=".WaitingActivity"></activity>
+        <activity android:name=".QuestFourActivity"></activity>
+        <activity android:name=".QuestThreeActivity" />
+        <activity android:name=".QuestTwoActivity" />
+        <activity android:name=".QuestOneActivity" />
+        <activity android:name=".WaitingActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">
