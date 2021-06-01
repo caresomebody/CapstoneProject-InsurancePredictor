@@ -10,11 +10,12 @@ import org.jetbrains.anko.startActivity
 
 class LoginActivity : AppCompatActivity() {
     lateinit var session: SessionManagement
+    private lateinit var binding: ActivityLoginBinding
     private lateinit var userDB: UserDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var binding = ActivityLoginBinding.inflate(layoutInflater)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         session = SessionManagement(applicationContext)
         if (session.checkLogin()) toDashboard()
@@ -23,7 +24,6 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun OnClick() {
-        var binding = ActivityLoginBinding.inflate(layoutInflater)
         binding.buttonLogIn.setOnClickListener {
             val uname = binding.email.text.toString()
             val password = binding.password.text.toString()

@@ -15,17 +15,19 @@ import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.CompletableDeferred
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 import org.jetbrains.anko.yesButton
 
 class SignUpActivity : AppCompatActivity() {
 
     lateinit var session: SessionManagement
     private lateinit var userDB: UserDatabase
+    private lateinit var binding: ActivitySignUpBinding
     val compositeDisposable = CompositeDisposable()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivitySignUpBinding.inflate(layoutInflater)
+        binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
         userDB = UserDatabase.getInstance(this)!!
         session = SessionManagement(applicationContext)
@@ -33,7 +35,6 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun onClick() {
-        val binding = ActivitySignUpBinding.inflate(layoutInflater)
         binding.buttonSignUp.setOnClickListener {
             val email = binding.email.text.toString()
             val name = binding.name.text.toString()
@@ -56,6 +57,7 @@ class SignUpActivity : AppCompatActivity() {
                 focusView = binding.name
                 cancel = true
             }
+
             if(TextUtils.isEmpty(password)){
                 binding.password.error = "Bagian ini harus diisi"
                 focusView = binding.password
@@ -68,10 +70,11 @@ class SignUpActivity : AppCompatActivity() {
                 insertToDb(User(email,name,password))
                 alert("Berhasil membuat akun") {
                     yesButton {
-                        finish()
                     }
                 }.show()
             }
+
+            toast("berhasil diklik")
         }
 
         binding.login.setOnClickListener{
@@ -79,7 +82,7 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
 
-    fun insertToDb(user: User){
+    private fun insertToDb(user: User){
         compositeDisposable.add(Completable.fromRunnable {
             userDB.userDao().addUser(user) }
             .subscribeOn(Schedulers.computation())
