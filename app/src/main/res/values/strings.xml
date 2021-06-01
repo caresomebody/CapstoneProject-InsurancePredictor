@@ -49,5 +49,19 @@
     <string name="name">Name</string>
     <string name="input_name">Input your name</string>
     <string name="prediction_success">Prediction Success!</string>
-    <string name="users_name">Ali Naufal</string>
+    <string name="name_result">Ali Naufal</string>
+    <string name="sex">Sex</string>
+    <string name="sex_result">Male</string>
+    <string name="colon">:</string>
+    <string name="body_mass_index">Body Mass index</string>
+    <string name="bmi_result">20</string>
+    <string name="smoking">Smoking</string>
+    <string name="smoking_result">No</string>
+    <string name="children">Number of Children</string>
+    <string name="children_result">0</string>
+    <string name="location">Location</string>
+    <string name="northwest_result">Northwest</string>
+    <string name="charge_prediction">Charge prediction:</string>
+    <string name="charge_result">$2000</string>
+    <string name="back_to_dashboard">Back To Dashboard</string>
 </resources>
