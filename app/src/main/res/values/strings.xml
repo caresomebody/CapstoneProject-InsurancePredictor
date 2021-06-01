@@ -48,4 +48,6 @@
     <string name="submit">SUBMIT</string>
     <string name="name">Name</string>
     <string name="input_name">Input your name</string>
+    <string name="prediction_success">Prediction Success!</string>
+    <string name="users_name">Ali Naufal</string>
 </resources>

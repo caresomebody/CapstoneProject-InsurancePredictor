@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.InsurancePredictor">
-        <activity android:name=".QuestFourActivity"/>
+        <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".QuestFourActivity" />
         <activity android:name=".QuestThreeActivity" />
         <activity android:name=".QuestTwoActivity" />
         <activity android:name=".QuestOneActivity" />
@@ -22,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
