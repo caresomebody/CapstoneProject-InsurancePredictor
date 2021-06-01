@@ -33,7 +33,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/username"
+        android:text="@string/email"
         android:textSize="14sp"
         android:fontFamily="@font/rubik_regular"
         android:textColor="@color/font"
@@ -41,10 +41,11 @@
         android:layout_marginBottom="4dp"/>
 
     <EditText
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/primary_rounded"
-        android:hint="@string/input_username"
+        android:hint="@string/input_email"
         android:paddingStart="16dp"
         android:textColorHint="@color/grey"
         android:fontFamily="@font/rubik_regular"
@@ -62,6 +63,7 @@
         android:layout_marginBottom="4dp"/>
 
     <EditText
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/primary_rounded"
@@ -73,6 +75,7 @@
         android:layout_marginBottom="32dp"/>
 
     <Button
+        android:id="@+id/button_log_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
@@ -98,6 +101,7 @@
             android:textColor="@color/font"/>
 
         <TextView
+            android:id="@+id/signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sign_up"

@@ -46,4 +46,6 @@
     <string name="northwest">Northwest</string>
     <string name="northeast">Northeast</string>
     <string name="submit">SUBMIT</string>
+    <string name="name">Name</string>
+    <string name="input_name">Input your name</string>
 </resources>
