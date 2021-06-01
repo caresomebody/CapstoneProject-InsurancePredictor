@@ -55,6 +55,7 @@ dependencies {
     implementation "org.jetbrains.anko:anko:0.10.8"
     implementation "org.jetbrains.anko:anko-design:0.10.8"
     implementation "org.jetbrains.anko:anko-sqlite:0.10.8"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     //room
     def room_version = "2.2.6"

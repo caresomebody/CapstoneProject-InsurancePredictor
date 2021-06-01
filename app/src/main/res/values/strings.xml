@@ -33,11 +33,11 @@
     <string name="how_tall_are_you">1. How tall are you?</string>
     <string name="input_height">Input your height</string>
     <string name="_2_what_is_your_weight">2. What is your weight?</string>
-    <string name="questionnaire_4_smoke">Questionnaire #4 : Smoke</string>
+    <string name="questionnaire_3_smoke">Questionnaire #3 : Smoke</string>
     <string name="_1_have_you_used_cigarettes">1. Have you used cigarettes, E-cigarettes, pipes, vapor products, snuff, chewing tobacco, nicotine gum or nicotine patches in the past 12 months?</string>
     <string name="no_i_have_not">No, I have not</string>
     <string name="yes_i_have">Yes, I have</string>
-    <string name="questionnaire_5_child_area"><![CDATA[Questionnaire #5 : Child & Area]]></string>
+    <string name="questionnaire_4_child_area"><![CDATA[Questionnaire #4 : Child & Area]]></string>
     <string name="_1_how_many_children_do_you_have">1. How many children do you have?</string>
     <string name="number_of_your_children">Number of your children</string>
     <string name="_2_where_do_you_live">2. Where do you live?</string>
@@ -64,4 +64,6 @@
     <string name="charge_prediction">Charge prediction:</string>
     <string name="charge_result">$2000</string>
     <string name="back_to_dashboard">Back To Dashboard</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

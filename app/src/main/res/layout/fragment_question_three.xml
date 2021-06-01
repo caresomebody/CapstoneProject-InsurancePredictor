@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".QuestThreeActivity">
+    tools:context=".QuestionThreeFragment">
 
     <TextView
         android:layout_width="wrap_content"
@@ -15,7 +15,7 @@
         android:fontFamily="@font/rubik_medium"
         android:textSize="28sp"
         android:textColor="@color/font"
-        android:text="@string/questionnaire_4_smoke"
+        android:text="@string/questionnaire_3_smoke"
         />
 
     <RadioGroup
@@ -56,6 +56,7 @@
     </RadioGroup>
 
     <Button
+        android:id="@+id/btn_question_three"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"

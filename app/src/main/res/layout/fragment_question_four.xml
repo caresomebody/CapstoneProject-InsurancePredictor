@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".QuestOneActivity">
+    tools:context=".QuestionFourFragment">
 
     <TextView
         android:layout_width="250dp"
@@ -15,7 +15,7 @@
         android:fontFamily="@font/rubik_medium"
         android:textSize="28sp"
         android:textColor="@color/font"
-        android:text="@string/questionnaire_1_age_amp_sex"
+        android:text="@string/questionnaire_4_child_area"
         />
 
     <TextView
@@ -26,16 +26,17 @@
         android:fontFamily="@font/rubik_light"
         android:textSize="14sp"
         android:textColor="@color/font"
-        android:text="@string/_1_how_old_are_you"
+        android:text="@string/_1_how_many_children_do_you_have"
         />
 
     <EditText
+        android:id="@+id/input_child"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/primary_rounded"
-        android:hint="@string/input_your_age"
+        android:hint="@string/number_of_your_children"
         android:paddingStart="16dp"
         android:textColorHint="@color/grey"
         android:fontFamily="@font/rubik_regular"
@@ -44,7 +45,7 @@
         tools:ignore="RtlSymmetry" />
 
     <RadioGroup
-        android:id="@+id/radio_group"
+        android:id="@+id/radio_group2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -56,35 +57,45 @@
             android:fontFamily="@font/rubik_light"
             android:textSize="14sp"
             android:textColor="@color/font"
-            android:text="@string/_2_you_identify_yourself_as"
+            android:text="@string/_2_where_do_you_live"
             />
 
         <RadioButton
-            android:id="@+id/radio_male"
+            android:id="@+id/radio_sw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
-            android:text="@string/male"
+            android:text="@string/southwest"
             android:textColor="@color/font"
             android:textSize="16sp"
             android:fontFamily="@font/rubik_regular" />
 
         <RadioButton
-            android:id="@+id/radio_female"
+            android:id="@+id/radio_se"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
-            android:text="@string/female"
+            android:text="@string/southeast"
             android:textColor="@color/font"
             android:textSize="16sp"
             android:fontFamily="@font/rubik_regular" />
 
         <RadioButton
-            android:id="@+id/radio_other"
+            android:id="@+id/radio_nw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
-            android:text="@string/other"
+            android:text="@string/northwest"
+            android:textColor="@color/font"
+            android:textSize="16sp"
+            android:fontFamily="@font/rubik_regular" />
+
+        <RadioButton
+            android:id="@+id/radio_ne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="@string/northeast"
             android:textColor="@color/font"
             android:textSize="16sp"
             android:fontFamily="@font/rubik_regular" />
@@ -93,14 +104,16 @@
 
 
     <Button
+        android:id="@+id/btn_question_four"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
-        android:text="@string/next"
+        android:text="@string/submit"
         android:fontFamily="@font/rubik_regular"
         android:textSize="16sp"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="20dp"
         />
+
 
 </LinearLayout>
