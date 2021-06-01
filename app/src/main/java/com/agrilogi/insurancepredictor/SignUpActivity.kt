@@ -31,11 +31,6 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(binding.root)
         userDB = UserDatabase.getInstance(this)!!
         session = SessionManagement(applicationContext)
-
-        binding.login.setOnClickListener{
-            startActivity<LoginActivity>()
-        }
-
         onClick()
     }
 
@@ -80,6 +75,10 @@ class SignUpActivity : AppCompatActivity() {
             }
 
             toast("berhasil diklik")
+        }
+
+        binding.login.setOnClickListener{
+            startActivity<LoginActivity>()
         }
     }
 

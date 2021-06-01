@@ -18,4 +18,7 @@ interface UserDao {
 
     @Insert
     fun addUser(vararg user:User)
+
+    @Query("SELECT * from users")
+    fun getAll(): List<User>
 }

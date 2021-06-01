@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuestionFourFragment">
+    tools:context=".questionnaire.QuestionFourFragment">
 
     <TextView
         android:layout_width="250dp"
@@ -101,19 +101,5 @@
             android:fontFamily="@font/rubik_regular" />
 
     </RadioGroup>
-
-
-    <Button
-        android:id="@+id/btn_question_four"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_button"
-        android:text="@string/submit"
-        android:fontFamily="@font/rubik_regular"
-        android:textSize="16sp"
-        android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="20dp"
-        />
-
 
 </LinearLayout>

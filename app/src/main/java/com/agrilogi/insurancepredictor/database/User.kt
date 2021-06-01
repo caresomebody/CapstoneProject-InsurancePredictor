@@ -16,6 +16,8 @@ data class User(
     var name: String,
     @ColumnInfo(name = "password")
     var password: String,
+    @ColumnInfo(name = "age")
+    var age: Int = 0,
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
