@@ -71,4 +71,6 @@ class Form2Activity : AppCompatActivity() {
                 Log.d("insertoDB", "Failed")
             }))
     }
+
+
 }

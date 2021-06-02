@@ -1,10 +1,9 @@
 package com.agrilogi.insurancepredictor
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.agrilogi.insurancepredictor.database.UserDatabase
-import com.agrilogi.insurancepredictor.databinding.ActivityForm4Binding
 import com.agrilogi.insurancepredictor.databinding.ActivityResultBinding
 import com.agrilogi.insurancepredictor.main.MainActivity
 import kotlinx.android.synthetic.main.activity_result.*
@@ -32,13 +31,20 @@ class ResultActivity : AppCompatActivity() {
         val email = session.user["email"]
         val user = userDB.userDao().getUserByEmail(email.toString())
 
+        val heightStr: String = user.height.toString()
+        val weightStr: String = user.weight.toString()
+        val heightValue = heightStr.toFloat() / 100
+        val weightValue = weightStr.toFloat()
+        val bmi = weightValue / (heightValue * heightValue)
+
         binding.name.text = user.name
         binding.sex.text = user.sex
         binding.smoking.text = user.smoke
-        binding.bmi.text = user.bmi.toString()
+        binding.bmi.text = bmi.toString()
         binding.children.text = user.child
         binding.location.text = user.location
 
         binding.charge.text = user.price.toString()
     }
+
 }
