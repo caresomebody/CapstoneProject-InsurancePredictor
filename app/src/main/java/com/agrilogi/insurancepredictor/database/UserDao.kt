@@ -23,8 +23,8 @@ interface UserDao {
     @Query("UPDATE users SET age = :age, sex = :sex WHERE email = :email")
     fun updateAgeSex(age: String, sex: String, email: String)
 
-    @Query("UPDATE users SET height = :height, weight = :weight WHERE email = :email")
-    fun updateBMI(height: String, weight: String, email: String)
+    @Query("UPDATE users SET height = :height, weight = :weight, bmi = :bmi WHERE email = :email")
+    fun updateBMI(height: String, weight: String, bmi: Float, email: String)
 
     @Query("UPDATE users SET child = :child, location = :location WHERE email = :email")
     fun updateChill(child: String, location: String, email: String)

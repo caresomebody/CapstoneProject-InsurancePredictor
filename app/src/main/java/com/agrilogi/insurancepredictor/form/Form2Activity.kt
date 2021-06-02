@@ -14,6 +14,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import org.jetbrains.anko.startActivity
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 class Form2Activity : AppCompatActivity() {
     private lateinit var binding: ActivityForm2Binding
@@ -34,9 +36,13 @@ class Form2Activity : AppCompatActivity() {
             session = SessionManagement(applicationContext)
             val email = session.user["email"]
             val user = userDB.userDao().getUserByEmail(email.toString())
-            val height = binding.inputHeight.text.toString()
-            val weight = binding.inputWeight.text.toString()
+            val height: String= binding.inputHeight.text.toString()
+            val weight: String = binding.inputWeight.text.toString()
             var focusView: View? = null
+
+            val heightValue = height.toFloat() / 100
+            val weightValue = weight.toFloat()
+            val bmi = weightValue / (heightValue * heightValue)
 
             if (TextUtils.isEmpty(height)){
                 binding.inputHeight.error = "Bagian ini harus diisi"
@@ -49,7 +55,7 @@ class Form2Activity : AppCompatActivity() {
             }
 
             else{
-                insertToDb(height, weight, user.email)
+                insertToDb(height, weight, roundNumber(bmi), user.email)
                 startActivity<Form3Activity>()
             }
         }
@@ -59,9 +65,9 @@ class Form2Activity : AppCompatActivity() {
         }
     }
 
-    private fun insertToDb(height: String, weight: String, email: String){
+    private fun insertToDb(height: String, weight: String, bmi: Float, email: String){
         compositeDisposable.add(Completable.fromRunnable {
-            userDB.userDao().updateBMI(height, weight, email)
+            userDB.userDao().updateBMI(height, weight, bmi, email)
         }
             .subscribeOn(Schedulers.computation())
             .observeOn(AndroidSchedulers.mainThread())
@@ -70,6 +76,12 @@ class Form2Activity : AppCompatActivity() {
             }, {
                 Log.d("insertoDB", "Failed")
             }))
+    }
+
+    private fun roundNumber(number: Float): Float {
+        val df = DecimalFormat("#.##")
+        df.roundingMode = RoundingMode.CEILING
+        return df.format(number).toFloat()
     }
 
 

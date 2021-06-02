@@ -10,7 +10,6 @@ import com.agrilogi.insurancepredictor.LoginActivity
 import com.agrilogi.insurancepredictor.R
 import com.agrilogi.insurancepredictor.SessionManagement
 import com.agrilogi.insurancepredictor.WaitingActivity
-import com.agrilogi.insurancepredictor.questionnaire.QuestionnaireActivity
 import com.agrilogi.insurancepredictor.database.UserDatabase
 import com.agrilogi.insurancepredictor.databinding.ActivityMainBinding
 import org.jetbrains.anko.startActivity

@@ -16,23 +16,29 @@ data class User(
     var name: String,
     @ColumnInfo(name = "password")
     var password: String,
+
     @ColumnInfo(name = "age")
     var age: String? = null,
     @ColumnInfo(name = "sex")
     var sex: String? = null,
+
     @ColumnInfo(name = "height")
     var height: Int? = null,
     @ColumnInfo(name = "weight")
     var weight: Int? = null,
+    @ColumnInfo(name = "bmi")
+    var bmi: Float? = null,
+
+
     @ColumnInfo(name = "smoke")
     var smoke: String? = null,
+
     @ColumnInfo(name = "child")
     var child: String? = null,
     @ColumnInfo(name = "location")
     var location: String? = null,
 
-    @ColumnInfo(name = "bmi")
-    var bmi: Int? = null,
+
     @ColumnInfo(name = "price")
     var price: Int? = null,
 

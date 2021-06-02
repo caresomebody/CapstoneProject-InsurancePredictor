@@ -31,16 +31,10 @@ class ResultActivity : AppCompatActivity() {
         val email = session.user["email"]
         val user = userDB.userDao().getUserByEmail(email.toString())
 
-        val heightStr: String = user.height.toString()
-        val weightStr: String = user.weight.toString()
-        val heightValue = heightStr.toFloat() / 100
-        val weightValue = weightStr.toFloat()
-        val bmi = weightValue / (heightValue * heightValue)
-
         binding.name.text = user.name
         binding.sex.text = user.sex
         binding.smoking.text = user.smoke
-        binding.bmi.text = bmi.toString()
+        binding.bmi.text = user.bmi.toString()
         binding.children.text = user.child
         binding.location.text = user.location
 
