@@ -7,7 +7,6 @@ import android.util.Log
 import android.view.View
 import com.agrilogi.insurancepredictor.SessionManagement
 import com.agrilogi.insurancepredictor.database.UserDatabase
-import com.agrilogi.insurancepredictor.databinding.ActivityForm1Binding
 import com.agrilogi.insurancepredictor.databinding.ActivityForm2Binding
 import io.reactivex.Completable
 import io.reactivex.android.schedulers.AndroidSchedulers

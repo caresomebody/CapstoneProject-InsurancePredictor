@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.agrilogi.insurancepredictor">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -9,14 +10,13 @@
         android:roundIcon="@drawable/logo_square"
         android:supportsRtl="true"
         android:theme="@style/Theme.InsurancePredictor">
-        <activity android:name=".HowActivity"></activity>
+        <activity android:name=".HowActivity"/>
         <activity android:name=".form.Form4Activity" />
         <activity android:name=".form.Form3Activity" />
         <activity android:name=".form.Form2Activity" />
         <activity android:name=".form.Form1Activity" />
         <activity android:name=".WaitingActivity" />
         <activity android:name=".ResultActivity" />
-        <activity android:name=".questionnaire.QuestionnaireActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>

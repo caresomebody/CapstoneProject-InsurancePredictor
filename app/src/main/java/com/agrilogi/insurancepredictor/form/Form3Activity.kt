@@ -14,6 +14,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
+import java.util.*
 
 class Form3Activity : AppCompatActivity() {
     private lateinit var binding: ActivityForm3Binding
@@ -36,7 +37,7 @@ class Form3Activity : AppCompatActivity() {
             val user = userDB.userDao().getUserByEmail(email.toString())
             val smokeId: Int = binding.radioGroup.checkedRadioButtonId
             val checkedSmoke= findViewById<RadioButton>(smokeId)
-            val smoke = checkedSmoke.text.toString()
+            val smoke = checkedSmoke.text.toString().toLowerCase(Locale.ROOT)
 
             if (smokeId==-1){
                 toast("Anda belum memilih apapun")

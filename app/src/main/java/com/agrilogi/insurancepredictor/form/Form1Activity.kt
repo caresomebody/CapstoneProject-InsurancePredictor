@@ -13,7 +13,6 @@ import io.reactivex.Completable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_form1.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
@@ -40,7 +39,7 @@ class Form1Activity : AppCompatActivity() {
             val age = binding.inputAge.text.toString()
             val sexId: Int = binding.radioGroup.checkedRadioButtonId
             val checkedSex = findViewById<RadioButton>(sexId)
-            val sex = checkedSex.text.toString()
+            val sex = checkedSex.text.toString().toLowerCase()
             var focusView: View? = null
 
             if (TextUtils.isEmpty(age)){

@@ -32,6 +32,9 @@ interface UserDao {
     @Query("UPDATE users SET smoke = :smoke WHERE email = :email")
     fun updateSmoke(smoke: String, email: String)
 
+    @Query("UPDATE users SET price = :price WHERE email = :email")
+    fun updateCharge(price: String, email: String)
+
     @Update
     fun updateAgeSex(vararg user:User)
 
@@ -43,6 +46,9 @@ interface UserDao {
 
     @Update
     fun updateChill(vararg user:User)
+
+    @Update
+    fun updateCharge(vararg user:User)
 
     @Query("SELECT * from users")
     fun getAll(): List<User>
