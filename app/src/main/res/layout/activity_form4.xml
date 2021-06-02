@@ -101,4 +101,27 @@
             android:fontFamily="@font/rubik_regular" />
     </RadioGroup>
 
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/rubik_regular"
+        android:text="@string/submit"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/rubik_regular"
+        android:text="@string/back"
+        android:textSize="16sp" />
+
 </LinearLayout>

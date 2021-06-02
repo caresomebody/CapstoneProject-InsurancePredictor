@@ -17,7 +17,17 @@ data class User(
     @ColumnInfo(name = "password")
     var password: String,
     @ColumnInfo(name = "age")
-    var age: Int = 0,
+    var age: String? = null,
+    @ColumnInfo(name = "sex")
+    var sex: Int? = null,
+    @ColumnInfo(name = "height")
+    var height: Int? = null,
+    @ColumnInfo(name = "weight")
+    var weight: Int? = null,
+    @ColumnInfo(name = "child")
+    var child: Int? = null,
+    @ColumnInfo(name = "location")
+    var location: String? = null,
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")

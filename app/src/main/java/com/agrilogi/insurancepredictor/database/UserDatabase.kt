@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [User::class],version = 6,exportSchema = false)
+@Database(entities = [User::class],version = 7,exportSchema = false)
 abstract class UserDatabase: RoomDatabase() {
     abstract fun userDao (): UserDao
     companion object{
@@ -14,7 +14,7 @@ abstract class UserDatabase: RoomDatabase() {
             if(INSTANCE == null){
                 synchronized(UserDatabase::class){
                     INSTANCE = Room.databaseBuilder(context.applicationContext,
-                        UserDatabase::class.java,"userclass.db").allowMainThreadQueries().build()
+                        UserDatabase::class.java,"userclass.db").fallbackToDestructiveMigration().allowMainThreadQueries().build()
                 }
             }
             return INSTANCE

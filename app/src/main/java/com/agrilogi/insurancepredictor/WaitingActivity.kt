@@ -3,6 +3,7 @@ package com.agrilogi.insurancepredictor
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.agrilogi.insurancepredictor.databinding.ActivityWaitingBinding
+import com.agrilogi.insurancepredictor.form.Form1Activity
 import com.agrilogi.insurancepredictor.questionnaire.QuestionnaireActivity
 import org.jetbrains.anko.startActivity
 
@@ -13,7 +14,7 @@ class WaitingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         binding.ready.setOnClickListener {
-            startActivity<QuestionnaireActivity>()
+            startActivity<Form1Activity>()
         }
     }
 }

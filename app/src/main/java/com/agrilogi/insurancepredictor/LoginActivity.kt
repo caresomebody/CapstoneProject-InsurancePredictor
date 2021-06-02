@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         session = SessionManagement(applicationContext)
-//        if (session.checkLogin()) toDashboard()
+        if (session.checkLogin()) toDashboard()
         userDB = UserDatabase.getInstance(this)!!
         OnClick()
     }

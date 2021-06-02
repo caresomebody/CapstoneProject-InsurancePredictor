@@ -8,6 +8,7 @@ import android.view.View
 import com.agrilogi.insurancepredictor.database.User
 import com.agrilogi.insurancepredictor.database.UserDatabase
 import com.agrilogi.insurancepredictor.databinding.ActivitySignUpBinding
+import com.agrilogi.insurancepredictor.main.MainActivity
 import io.reactivex.Completable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -21,8 +22,8 @@ import org.jetbrains.anko.yesButton
 class SignUpActivity : AppCompatActivity() {
 
     lateinit var session: SessionManagement
-    private lateinit var userDB: UserDatabase
     private lateinit var binding: ActivitySignUpBinding
+    private lateinit var userDB: UserDatabase
     val compositeDisposable = CompositeDisposable()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +32,7 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(binding.root)
         userDB = UserDatabase.getInstance(this)!!
         session = SessionManagement(applicationContext)
+        if (session.checkLogin()) toDashboard()
         onClick()
     }
 
@@ -73,7 +75,6 @@ class SignUpActivity : AppCompatActivity() {
                     }
                 }.show()
             }
-
             toast("berhasil diklik")
         }
 
@@ -92,5 +93,11 @@ class SignUpActivity : AppCompatActivity() {
             },{
                 Log.d("insertoDB","Failed")
             }))
+    }
+
+    private fun toDashboard(){
+        startActivity<MainActivity>()
+        session.createOnBoardSession()
+        finish()
     }
 }
