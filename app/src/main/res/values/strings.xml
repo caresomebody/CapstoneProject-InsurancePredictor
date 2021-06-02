@@ -69,4 +69,9 @@
     <string name="back">Back</string>
     <string name="log_out">Log Out</string>
     <string name="input_your_weight">Input your weight</string>
+    <string name="welcome_to">Welcome to Insurance Predictor!</string>
+    <string name="our_goal">Our Goal</string>
+    <string name="goal">Our goal is to shorten the time taken of deciding the cost of insurance by applying machine learning to analyze data and make decisions.</string>
+    <string name="how">Insurance Predictor predict insurance charge that you will receive by analyzing personal data that you have provided by filling out the form. The data that you give will be processed by a machine learning model to predict an insurance charge you will received.</string>
+    <string name="by_agrilogi">By Agrilogi</string>
 </resources>
