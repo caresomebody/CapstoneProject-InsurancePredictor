@@ -1,8 +1,13 @@
 package com.agrilogi.insurancepredictor.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
+import com.agrilogi.insurancepredictor.LoginActivity
+import com.agrilogi.insurancepredictor.R
 import com.agrilogi.insurancepredictor.SessionManagement
 import com.agrilogi.insurancepredictor.WaitingActivity
 import com.agrilogi.insurancepredictor.questionnaire.QuestionnaireActivity
@@ -14,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var userDB: UserDatabase
     lateinit var session: SessionManagement
+    private lateinit var menu: Menu
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,5 +37,20 @@ class MainActivity : AppCompatActivity() {
         binding.predictNow.setOnClickListener {
             startActivity<WaitingActivity>()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        this.menu = menu
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.logout) {
+            session.logoutUser()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

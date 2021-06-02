@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo_square"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo_square"
         android:supportsRtl="true"
         android:theme="@style/Theme.InsurancePredictor">
         <activity android:name=".form.Form4Activity"></activity>
@@ -16,7 +16,8 @@
         <activity android:name=".WaitingActivity" />
         <activity android:name=".ResultActivity" />
         <activity android:name=".questionnaire.QuestionnaireActivity" />
-        <activity android:name=".SignUpActivity">
+        <activity android:name=".SignUpActivity"/>
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

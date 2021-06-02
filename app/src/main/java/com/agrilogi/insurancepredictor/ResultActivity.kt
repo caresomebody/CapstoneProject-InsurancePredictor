@@ -11,6 +11,8 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
+        supportActionBar?.hide()
+
         button_back_dashboard.setOnClickListener {
             startActivity<MainActivity>()
         }
