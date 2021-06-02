@@ -44,27 +44,5 @@ class ResultActivity : AppCompatActivity() {
             binding.calculate.visibility = View.GONE
             binding.progressbar.visibility = View.GONE
         })
-
     }
-
-//    private fun setData() {
-//        userDB = UserDatabase.getInstance(this)!!
-//        session = SessionManagement(applicationContext)
-//        val email = session.user["email"]
-//        val user = userDB.userDao().getUserByEmail(email.toString())
-//        binding.calculate.visibility = View.GONE
-//        binding.progressbar.visibility = View.GONE
-//        binding.name.text = user.name
-//        binding.sex.text = user.sex
-//        binding.smoking.text = user.smoke
-//        binding.bmi.text = user.bmi.toString()
-//        binding.children.text = user.child
-//        binding.location.text = user.location
-//        binding.charge.text = ("$" + user.price.toString())
-//        Log.d("ini price", user.price.toString())
-//
-////        apiViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(Api::class.java)
-////        apiViewModel.getUserCharge(user.age, user.bmi.toString(), user.child, user.smoke, user.location, baseContext)
-//    }
-
 }
