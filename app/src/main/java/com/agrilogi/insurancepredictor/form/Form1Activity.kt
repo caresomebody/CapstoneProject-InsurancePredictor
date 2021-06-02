@@ -41,14 +41,11 @@ class Form1Activity : AppCompatActivity() {
             val sexId: Int = binding.radioGroup.checkedRadioButtonId
             val checkedSex = findViewById<RadioButton>(sexId)
             val sex = checkedSex.text.toString()
-            Log.d("ini sex", sex.toString())
-            var cancel = false
             var focusView: View? = null
 
             if (TextUtils.isEmpty(age)){
                 binding.inputAge.error = "Bagian ini harus diisi"
                 focusView = binding.inputAge
-                cancel = true
             }
 
             if (sexId==-1){

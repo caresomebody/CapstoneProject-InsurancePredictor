@@ -48,7 +48,7 @@ class SignUpActivity : AppCompatActivity() {
                 binding.email.error = "Bagian ini harus diisi"
                 focusView = binding.email
                 cancel = true
-            } else if(userDB.userDao().checkUserEmail(email)){
+            } else if(email == userDB.userDao().checkUserEmail(email).toString()){
                 binding.email.error = "Email sudah dipakai"
                 focusView = binding.email
                 cancel = true

@@ -55,10 +55,10 @@ class LoginActivity : AppCompatActivity() {
                     binding.password.error = "Username and Password didn't match"
                 }
             }
+        }
 
-            binding.signup.setOnClickListener{
-                startActivity<SignUpActivity>()
-            }
+        binding.signup.setOnClickListener{
+            startActivity<SignUpActivity>()
         }
     }
 

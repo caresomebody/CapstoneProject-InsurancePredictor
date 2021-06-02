@@ -19,15 +19,22 @@ data class User(
     @ColumnInfo(name = "age")
     var age: String? = null,
     @ColumnInfo(name = "sex")
-    var sex: Int? = null,
+    var sex: String? = null,
     @ColumnInfo(name = "height")
     var height: Int? = null,
     @ColumnInfo(name = "weight")
     var weight: Int? = null,
+    @ColumnInfo(name = "smoke")
+    var smoke: String? = null,
     @ColumnInfo(name = "child")
-    var child: Int? = null,
+    var child: String? = null,
     @ColumnInfo(name = "location")
     var location: String? = null,
+
+    @ColumnInfo(name = "bmi")
+    var bmi: Int? = null,
+    @ColumnInfo(name = "price")
+    var price: Int? = null,
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
