@@ -10,6 +10,7 @@ import com.agrilogi.insurancepredictor.LoginActivity
 import com.agrilogi.insurancepredictor.R
 import com.agrilogi.insurancepredictor.SessionManagement
 import com.agrilogi.insurancepredictor.WaitingActivity
+import com.agrilogi.insurancepredictor.*
 import com.agrilogi.insurancepredictor.database.UserDatabase
 import com.agrilogi.insurancepredictor.databinding.ActivityMainBinding
 import org.jetbrains.anko.startActivity
@@ -35,6 +36,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.predictNow.setOnClickListener {
             startActivity<WaitingActivity>()
+        }
+
+        binding.howItWorks.setOnClickListener {
+            startActivity<HowActivity>()
         }
     }
 

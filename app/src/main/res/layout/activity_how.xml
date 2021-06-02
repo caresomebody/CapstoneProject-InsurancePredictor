@@ -54,8 +54,7 @@
         android:text="@string/how"
         android:fontFamily="@font/rubik_light"
         android:textSize="16sp"
-        android:textColor="@color/font"
-        android:layout_marginBottom="275dp"/>
+        android:textColor="@color/font"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -64,6 +63,7 @@
         android:layout_weight="1">
 
         <Button
+            android:id="@+id/predict"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_button"
