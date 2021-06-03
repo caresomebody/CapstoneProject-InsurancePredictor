@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
-import com.agrilogi.insurancepredictor.main.MainActivity
 import com.agrilogi.insurancepredictor.database.UserDatabase
 import com.agrilogi.insurancepredictor.databinding.ActivityLoginBinding
 import org.jetbrains.anko.startActivity

@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.agrilogi.insurancepredictor.database.UserDatabase
 import com.agrilogi.insurancepredictor.databinding.ActivityResultBinding
-import com.agrilogi.insurancepredictor.main.MainActivity
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_result.*
 import org.jetbrains.anko.startActivity

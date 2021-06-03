@@ -8,7 +8,6 @@ import android.view.View
 import com.agrilogi.insurancepredictor.database.User
 import com.agrilogi.insurancepredictor.database.UserDatabase
 import com.agrilogi.insurancepredictor.databinding.ActivitySignUpBinding
-import com.agrilogi.insurancepredictor.main.MainActivity
 import io.reactivex.Completable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable

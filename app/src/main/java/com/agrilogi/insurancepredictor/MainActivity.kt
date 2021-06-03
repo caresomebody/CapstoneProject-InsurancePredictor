@@ -1,4 +1,4 @@
-package com.agrilogi.insurancepredictor.main
+package com.agrilogi.insurancepredictor
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,12 +7,6 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import androidx.lifecycle.ViewModelProvider
-import com.agrilogi.insurancepredictor.LoginActivity
-import com.agrilogi.insurancepredictor.R
-import com.agrilogi.insurancepredictor.SessionManagement
-import com.agrilogi.insurancepredictor.WaitingActivity
-import com.agrilogi.insurancepredictor.*
 import com.agrilogi.insurancepredictor.database.UserDatabase
 import com.agrilogi.insurancepredictor.databinding.ActivityMainBinding
 import org.jetbrains.anko.startActivity
@@ -36,6 +30,14 @@ class MainActivity : AppCompatActivity() {
         val user = userDB.userDao().getUserByEmail(email.toString())
 
         binding.name.text = ("Hi, " + user.name)
+        if (user.price != null){
+            binding.nameHistory.text = user.name
+            binding.ChargeHistory.text = user.price
+
+        } else {
+            binding.cardHistory.visibility = View.GONE
+            binding.notYet.visibility = View.VISIBLE
+        }
 
         binding.predictNow.setOnClickListener {
             startActivity<WaitingActivity>()
@@ -45,19 +47,9 @@ class MainActivity : AppCompatActivity() {
             startActivity<HowActivity>()
         }
 
-        apiViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(ApiViewModel::class.java)
-        apiViewModel.setPredict(this)
-        apiViewModel.getPredict().observe(this, {
-            if (it.price == null){
-                Log.d("ini it", it.toString())
-                binding.cardHistory.visibility = View.GONE
-                binding.notYet.visibility = View.VISIBLE
-            } else {
-                Log.d("ini it", it.toString())
-                binding.nameHistory.text = it.name
-                binding.ChargeHistory.text = it.price
-            }
-        })
+        binding.cardHistory.setOnClickListener {
+            startActivity<ResultActivity>()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
