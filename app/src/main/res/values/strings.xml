@@ -15,7 +15,7 @@
     <string name="have_an_account">Already have an account?</string>
     <string name="let_s_predict_your_insurance_charge_now">Let’s predict your insurance charge now!</string>
     <string name="predict_now">Predict Now</string>
-    <string name="learn_how_app_name_works">Learn How [App Name] Works</string>
+    <string name="learn_how_app_name_works">Learn How Insurance Predictor Works</string>
     <string name="how_it_works">How it Works</string>
     <string name="history">History</string>
     <string name="waiting_for_you_to_be_ready">Waiting for you to be ready...</string>
@@ -31,7 +31,7 @@
     <string name="other">Other</string>
     <string name="questionnaire_2_bmi">Questionnaire #2 : BMI</string>
     <string name="how_tall_are_you">1. How tall are you?</string>
-    <string name="input_height">Input your height</string>
+    <string name="input_height">Input your height in Cm</string>
     <string name="_2_what_is_your_weight">2. What is your weight?</string>
     <string name="questionnaire_3_smoke">Questionnaire #3 : Smoke</string>
     <string name="_1_have_you_used_cigarettes">1. Have you used cigarettes, E-cigarettes, pipes, vapor products, snuff, chewing tobacco, nicotine gum or nicotine patches in the past 12 months?</string>
@@ -68,10 +68,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="back">Back</string>
     <string name="log_out">Log Out</string>
-    <string name="input_your_weight">Input your weight</string>
+    <string name="input_your_weight">Input your weight in Kg</string>
     <string name="welcome_to">Welcome to Insurance Predictor!</string>
     <string name="our_goal">Our Goal</string>
     <string name="goal">Our goal is to shorten the time taken of deciding the cost of insurance by applying machine learning to analyze data and make decisions.</string>
     <string name="how">Insurance Predictor predict insurance charge that you will receive by analyzing personal data that you have provided by filling out the form. The data that you give will be processed by a machine learning model to predict an insurance charge you will received.</string>
     <string name="by_agrilogi">By Agrilogi</string>
+    <string name="age">Age</string>
+    <string name="you_haven_t_predict_anything_yet">you have not made a prediction</string>
 </resources>

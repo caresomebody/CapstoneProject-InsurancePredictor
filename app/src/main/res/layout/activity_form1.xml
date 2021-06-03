@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".questionnaire.QuestionOneFragment">
+    tools:context=".form.Form1Activity">
 
     <TextView
         android:layout_width="250dp"
@@ -92,17 +92,25 @@
             android:fontFamily="@font/rubik_regular" />
     </RadioGroup>
 
-    <Button
-        android:id="@+id/btn_next"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/rounded_button"
-        android:fontFamily="@font/rubik_regular"
-        android:text="@string/next"
-        android:textSize="16sp" />
+        android:layout_height="0dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical"
+        android:layout_weight="1">
 
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/rounded_button"
+            android:layout_gravity="bottom"
+            android:fontFamily="@font/rubik_regular"
+            android:text="@string/next"
+            android:textSize="16sp" />
+
+    </LinearLayout>
 
 </LinearLayout>

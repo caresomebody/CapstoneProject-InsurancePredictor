@@ -117,6 +117,44 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@string/age"
+            android:fontFamily="@font/rubik_regular"
+            android:textSize="20sp"
+            android:textColor="@color/font"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/colon"
+            android:fontFamily="@font/rubik_regular"
+            android:textSize="20sp"
+            android:textColor="@color/font"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="21"
+            android:fontFamily="@font/rubik_regular"
+            android:textSize="20sp"
+            android:textColor="@color/font"
+            android:gravity="right"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/sex"
             android:fontFamily="@font/rubik_regular"
             android:textSize="20sp"

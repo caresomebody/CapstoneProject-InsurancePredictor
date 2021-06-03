@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import androidx.lifecycle.ViewModelProvider
 import com.agrilogi.insurancepredictor.LoginActivity
 import com.agrilogi.insurancepredictor.R
 import com.agrilogi.insurancepredictor.SessionManagement
@@ -20,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var userDB: UserDatabase
     lateinit var session: SessionManagement
     private lateinit var menu: Menu
+    private lateinit var apiViewModel: ApiViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +44,20 @@ class MainActivity : AppCompatActivity() {
         binding.howItWorks.setOnClickListener {
             startActivity<HowActivity>()
         }
+
+        apiViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(ApiViewModel::class.java)
+        apiViewModel.setPredict(this)
+        apiViewModel.getPredict().observe(this, {
+            if (it.price == null){
+                Log.d("ini it", it.toString())
+                binding.cardHistory.visibility = View.GONE
+                binding.notYet.visibility = View.VISIBLE
+            } else {
+                Log.d("ini it", it.toString())
+                binding.nameHistory.text = it.name
+                binding.ChargeHistory.text = it.price
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

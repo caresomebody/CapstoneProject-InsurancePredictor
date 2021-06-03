@@ -35,6 +35,7 @@ class ResultActivity : AppCompatActivity() {
             Log.d("ini it", it.toString())
             binding.name.text = it.name
             binding.sex.text = it.sex
+            binding.age.text = it.age
             binding.smoking.text = it.smoke
             binding.bmi.text = it.bmi.toString()
             binding.children.text = it.child

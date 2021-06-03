@@ -79,52 +79,50 @@
         android:layout_height="67dp"
         app:cardCornerRadius="8dp"
         app:cardBackgroundColor="@color/white"
+        android:layout_margin="16dp"
         app:cardElevation="10dp"
         android:layout_marginHorizontal="20dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="16dp">
 
             <ImageView
+                android:id="@+id/question_mark"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/ic_question_mark"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/textView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:background="@drawable/ic_question_mark" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:fontFamily="@font/rubik_medium"
-                android:text="@string/how_it_works"
-                android:textColor="@color/font"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.35"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.312" />
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/rubik_light"
-                android:text="@string/learn_how_app_name_works"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.601"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.708" />
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/rubik_medium"
+                    android:text="@string/how_it_works"
+                    android:textColor="@color/font"
+                    android:textSize="16sp"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubik_light"
+                    android:text="@string/learn_how_app_name_works"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
@@ -138,7 +136,21 @@
         android:textColor="@color/font"
         android:fontFamily="@font/rubik_medium"/>
 
+    <TextView
+        android:id="@+id/not_yet"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/you_haven_t_predict_anything_yet"
+        android:layout_marginHorizontal="16dp"
+        android:layout_gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/font"
+        android:fontFamily="@font/rubik_regular"
+        android:visibility="gone"/>
+
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_history"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="67dp"
@@ -146,6 +158,40 @@
         app:cardBackgroundColor="@color/white"
         app:cardElevation="10dp"
         android:layout_marginHorizontal="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="16dp"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/name_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Nama User"
+                android:fontFamily="@font/rubik_medium"
+                android:textSize="20dp"
+                android:textColor="@color/font"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/Charge_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                tools:text="Charge"
+                android:fontFamily="@font/rubik_medium"
+                android:textSize="20dp"
+                android:textColor="@color/primary"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>

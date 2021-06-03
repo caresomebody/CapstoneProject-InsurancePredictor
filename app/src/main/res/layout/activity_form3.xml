@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".questionnaire.QuestionThreeFragment">
+    tools:context=".form.Form3Activity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,6 +16,7 @@
         android:textSize="28sp"
         android:textColor="@color/font"
         android:text="@string/questionnaire_3_smoke"
+        android:layout_marginBottom="20dp"
         />
 
     <RadioGroup
@@ -26,7 +27,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginHorizontal="20dp"
             android:fontFamily="@font/rubik_light"
             android:textSize="14sp"
@@ -55,27 +55,37 @@
             android:fontFamily="@font/rubik_regular" />
     </RadioGroup>
 
-    <Button
-        android:id="@+id/btn_next"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/rounded_button"
-        android:fontFamily="@font/rubik_regular"
-        android:text="@string/next"
-        android:textSize="16sp" />
+        android:layout_height="0dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical"
+        android:layout_weight="1">
 
-    <Button
-        android:id="@+id/btn_back"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/rounded_button"
-        android:fontFamily="@font/rubik_regular"
-        android:text="@string/back"
-        android:textSize="16sp" />
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/rubik_regular"
+            android:layout_gravity="center_horizontal|center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:text="@string/next"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/rubik_regular"
+            android:layout_marginBottom="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:text="@string/back"
+            android:textSize="16sp" />
+
+    </LinearLayout>
 
 </LinearLayout>
