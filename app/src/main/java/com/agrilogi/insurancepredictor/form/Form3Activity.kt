@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.RadioButton
+import com.agrilogi.insurancepredictor.R
 import com.agrilogi.insurancepredictor.SessionManagement
 import com.agrilogi.insurancepredictor.database.UserDatabase
 import com.agrilogi.insurancepredictor.databinding.ActivityForm1Binding
@@ -40,7 +41,7 @@ class Form3Activity : AppCompatActivity() {
             val smoke = checkedSmoke.text.toString().toLowerCase(Locale.ROOT)
 
             if (smokeId==-1){
-                toast("Anda belum memilih apapun")
+                toast(getString(R.string.havent_chosen))
             } else {
                 insertToDb(smoke, user.email)
                 startActivity<Form4Activity>()

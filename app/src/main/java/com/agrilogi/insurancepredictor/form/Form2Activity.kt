@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
+import com.agrilogi.insurancepredictor.R
 import com.agrilogi.insurancepredictor.SessionManagement
 import com.agrilogi.insurancepredictor.database.UserDatabase
 import com.agrilogi.insurancepredictor.databinding.ActivityForm2Binding
@@ -44,12 +45,12 @@ class Form2Activity : AppCompatActivity() {
             val bmi = weightValue / (heightValue * heightValue)
 
             if (TextUtils.isEmpty(height)){
-                binding.inputHeight.error = "Bagian ini harus diisi"
+                binding.inputHeight.error = getString(R.string.required)
                 focusView = binding.inputHeight
             }
 
             if (TextUtils.isEmpty(weight)){
-                binding.inputWeight.error = "Bagian ini harus diisi"
+                binding.inputWeight.error = getString(R.string.required)
                 focusView = binding.inputWeight
             }
 

@@ -1,371 +1,378 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingStart="20dp"
-    android:paddingTop="40dp"
-    android:paddingEnd="20dp"
-    android:orientation="vertical"
-    tools:context=".ResultActivity">
+    android:layout_height="wrap_content">
 
     <LinearLayout
-        android:id="@+id/calculate"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
         android:paddingStart="20dp"
+        android:paddingTop="40dp"
         android:paddingEnd="20dp"
-        tools:context=".CalculatingFragment">
+        android:orientation="vertical"
+        tools:context=".ResultActivity">
 
-        <ProgressBar
-            android:id="@+id/progressbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+        <LinearLayout
+            android:id="@+id/calculate"
             android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            tools:context=".CalculatingFragment">
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/font"
+                android:text="Calculating..."
+                android:gravity="center"
+                android:fontFamily="@font/rubik_medium"
+                android:textSize="35sp"
+                android:layout_marginBottom="4dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/font"
+                android:text="We are calculating your charge based on the answer you gave."
+                android:gravity="center"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/success"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/font"
-            android:text="Calculating..."
+            android:text="@string/prediction_success"
+            android:fontFamily="@font/rubik_medium"
+            android:textSize="24sp"
             android:gravity="center"
+            android:textColor="@color/font"
+            android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/colon"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/name_result"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:gravity="right"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/age"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/colon"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="21"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:gravity="right"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sex"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/colon"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/sex_result"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:gravity="right"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/body_mass_index"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/colon"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/bmi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/bmi_result"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:gravity="right"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/smoking"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/colon"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/smoking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/smoking_result"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:gravity="right"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/children"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/colon"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/children"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/children_result"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:gravity="right"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginBottom="32dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/location"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/colon"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/northwest_result"
+                android:fontFamily="@font/rubik_regular"
+                android:textSize="20sp"
+                android:textColor="@color/font"
+                android:gravity="right"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/charge_prediction"
+            android:fontFamily="@font/rubik_regular"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:textColor="@color/font"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/charge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@string/charge_result"
             android:fontFamily="@font/rubik_medium"
             android:textSize="35sp"
-            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:textColor="@color/font"
+            android:layout_marginBottom="20dp"
             />
 
-        <TextView
+        <Button
+            android:id="@+id/button_back_dashboard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/font"
-            android:text="We are calculating your charge based on the answer you gave."
-            android:gravity="center"
+            android:background="@drawable/rounded_button"
+            android:text="@string/back_to_dashboard"
             android:fontFamily="@font/rubik_regular"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"
+            />
+
     </LinearLayout>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/success"
-        android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/prediction_success"
-        android:fontFamily="@font/rubik_medium"
-        android:textSize="24sp"
-        android:gravity="center"
-        android:textColor="@color/font"
-        android:layout_marginBottom="16dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:layout_marginBottom="16dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/name"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/colon"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="@string/name_result"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:gravity="right"
-            android:layout_weight="1" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:layout_marginBottom="16dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/age"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/colon"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:id="@+id/age"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="21"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:gravity="right"
-            android:layout_weight="1" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:layout_marginBottom="16dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/sex"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/colon"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:id="@+id/sex"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="@string/sex_result"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:gravity="right"
-            android:layout_weight="1" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:layout_marginBottom="16dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/body_mass_index"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/colon"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:id="@+id/bmi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="@string/bmi_result"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:gravity="right"
-            android:layout_weight="1" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:layout_marginBottom="16dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/smoking"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/colon"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:id="@+id/smoking"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="@string/smoking_result"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:gravity="right"
-            android:layout_weight="1" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:layout_marginBottom="16dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/children"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/colon"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:id="@+id/children"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="@string/children_result"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:gravity="right"
-            android:layout_weight="1" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:layout_marginBottom="32dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/location"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/colon"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:id="@+id/location"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="@string/northwest_result"
-            android:fontFamily="@font/rubik_regular"
-            android:textSize="20sp"
-            android:textColor="@color/font"
-            android:gravity="right"
-            android:layout_weight="1" />
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/charge_prediction"
-        android:fontFamily="@font/rubik_regular"
-        android:textSize="14sp"
-        android:gravity="center"
-        android:textColor="@color/font"
-        android:layout_marginBottom="4dp"/>
-
-    <TextView
-        android:id="@+id/charge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="@string/charge_result"
-        android:fontFamily="@font/rubik_medium"
-        android:textSize="35sp"
-        android:gravity="center"
-        android:textColor="@color/font"
-        android:layout_marginBottom="20dp"
-        />
-
-    <Button
-        android:id="@+id/button_back_dashboard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_button"
-        android:text="@string/back_to_dashboard"
-        android:fontFamily="@font/rubik_regular"
-        android:textSize="16sp"
-        android:layout_marginBottom="16dp"
-        />
-
-</LinearLayout>
+</ScrollView>

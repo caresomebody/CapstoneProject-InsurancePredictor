@@ -76,4 +76,10 @@
     <string name="by_agrilogi">By Agrilogi</string>
     <string name="age">Age</string>
     <string name="you_haven_t_predict_anything_yet">you have not made a prediction</string>
+    <string name="required">This section is required</string>
+    <string name="havent_chosen">You have not chosen anything yet</string>
+    <string name="email_used">Email already used</string>
+    <string name="success_account">Successfully created an account</string>
+    <string name="didnt_match">Username and Password did not match</string>
+    <string name="result">Result</string>
 </resources>

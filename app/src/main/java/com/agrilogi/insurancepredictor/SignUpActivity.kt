@@ -43,23 +43,23 @@ class SignUpActivity : AppCompatActivity() {
             var focusView: View? = null
 
             if(TextUtils.isEmpty(email)){
-                binding.email.error = "Bagian ini harus diisi"
+                binding.email.error = getString(R.string.required)
                 focusView = binding.email
                 cancel = true
             } else if(email == userDB.userDao().checkUserEmail(email).toString()){
-                binding.email.error = "Email sudah dipakai"
+                binding.email.error = getString(R.string.email_used)
                 focusView = binding.email
                 cancel = true
             }
 
             if (TextUtils.isEmpty(name)){
-                binding.name.error = "Bagian ini harus diisi"
+                binding.name.error = getString(R.string.required)
                 focusView = binding.name
                 cancel = true
             }
 
             if(TextUtils.isEmpty(password)){
-                binding.password.error = "Bagian ini harus diisi"
+                binding.password.error = getString(R.string.required)
                 focusView = binding.password
                 cancel = true
             }
@@ -68,12 +68,11 @@ class SignUpActivity : AppCompatActivity() {
                 focusView?.requestFocus()
             } else {
                 insertToDb(User(email,name,password))
-                alert("Berhasil membuat akun") {
+                alert(getString(R.string.success_account)) {
                     yesButton {
                     }
                 }.show()
             }
-            toast("berhasil diklik")
         }
 
         binding.login.setOnClickListener{

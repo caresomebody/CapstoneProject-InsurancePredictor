@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         binding.name.text = ("Hi, " + user.name)
         if (user.price != null){
             binding.nameHistory.text = user.name
-            binding.ChargeHistory.text = user.price
+            binding.ChargeHistory.text = ("$ " + user.price.toString())
 
         } else {
             binding.cardHistory.visibility = View.GONE

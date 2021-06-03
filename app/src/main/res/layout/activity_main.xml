@@ -21,12 +21,12 @@
             android:id="@+id/profile_img"
             android:layout_width="68dp"
             android:layout_height="68dp"
-            android:src="@drawable/profile_picture" />
+            android:src="@drawable/profpic" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="12dp"
             android:gravity="left"
             android:orientation="vertical">
 
@@ -59,6 +59,7 @@
         app:cardCornerRadius="20dp"
         app:cardBackgroundColor="@color/primary"
         app:cardElevation="10dp"
+        android:layout_marginBottom="12dp"
         android:layout_marginHorizontal="20dp">
         <TextView
             android:layout_width="match_parent"
@@ -74,7 +75,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/how_it_works"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         android:layout_width="match_parent"
         android:layout_height="67dp"
         app:cardCornerRadius="8dp"

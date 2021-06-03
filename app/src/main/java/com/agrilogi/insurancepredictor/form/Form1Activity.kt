@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatActivity
+import com.agrilogi.insurancepredictor.R
 import com.agrilogi.insurancepredictor.SessionManagement
 import com.agrilogi.insurancepredictor.database.UserDatabase
 import com.agrilogi.insurancepredictor.databinding.ActivityForm1Binding
@@ -43,12 +44,12 @@ class Form1Activity : AppCompatActivity() {
             var focusView: View? = null
 
             if (TextUtils.isEmpty(age)){
-                binding.inputAge.error = "Bagian ini harus diisi"
+                binding.inputAge.error = getString(R.string.required)
                 focusView = binding.inputAge
             }
 
             if (sexId==-1){
-                toast("Anda belum memilih apapun")
+                toast(getString(R.string.havent_chosen))
             } else {
                     insertToDb(age, sex, user.email)
                 startActivity<Form2Activity>()

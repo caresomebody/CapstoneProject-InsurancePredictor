@@ -31,13 +31,13 @@ class LoginActivity : AppCompatActivity() {
             var cancel = false
 
             if (TextUtils.isEmpty(uname)){
-                binding.email.error = "Your Username has to filled!"
+                binding.email.error = getString(R.string.required)
                 focusView = binding.email
                 cancel = true
             }
 
             if(TextUtils.isEmpty(password)){
-                binding.password.error = "Bagian ini harus diisi"
+                binding.password.error = getString(R.string.required)
                 focusView = binding.password
                 cancel = true
             }
@@ -50,8 +50,8 @@ class LoginActivity : AppCompatActivity() {
                     session.createUser(uname, password)
                     toDashboard()
                 } else {
-                    binding.email.error = "Username and Password didn't match"
-                    binding.password.error = "Username and Password didn't match"
+                    binding.email.error = getString(R.string.didnt_match)
+                    binding.password.error = getString(R.string.didnt_match)
                 }
             }
         }

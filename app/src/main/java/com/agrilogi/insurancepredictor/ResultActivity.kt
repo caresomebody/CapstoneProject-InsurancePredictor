@@ -22,7 +22,7 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportActionBar?.hide()
+        supportActionBar?.title = getString(R.string.result)
         button_back_dashboard.setOnClickListener {
             startActivity<MainActivity>()
         }

@@ -6,6 +6,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.RadioButton
+import com.agrilogi.insurancepredictor.R
 import com.agrilogi.insurancepredictor.ResultActivity
 import com.agrilogi.insurancepredictor.SessionManagement
 import com.agrilogi.insurancepredictor.database.ApiInterface
@@ -56,12 +57,12 @@ class Form4Activity : AppCompatActivity() {
             var focusView: View? = null
 
             if (TextUtils.isEmpty(child)){
-                binding.inputChild.error = "Bagian ini harus diisi"
+                binding.inputChild.error = getString(R.string.required)
                 focusView = binding.inputChild
             }
 
             if (locId==-1){
-                toast("Anda belum memilih apapun")
+                toast(getString(R.string.havent_chosen))
             } else {
                 insertToDb(child, location, user.email)
                 Log.d("ini childe di form 4", user.child.toString())

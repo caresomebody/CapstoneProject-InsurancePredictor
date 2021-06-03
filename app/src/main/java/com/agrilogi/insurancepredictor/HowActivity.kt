@@ -14,6 +14,8 @@ class HowActivity : AppCompatActivity() {
         binding = ActivityHowBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.title = getString(R.string.how_it_works)
+
         binding.predict.setOnClickListener{
             startActivity<WaitingActivity>()
         }
