@@ -6,9 +6,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingStart="20dp"
-        android:paddingTop="40dp"
+        android:paddingTop="20dp"
         android:paddingEnd="20dp"
         android:orientation="vertical"
+        android:background="@color/background"
         tools:context=".ResultActivity">
 
         <LinearLayout
@@ -74,7 +75,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="8dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -112,7 +113,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="8dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -150,7 +151,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="8dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -188,7 +189,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="8dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -226,7 +227,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="8dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -264,7 +265,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="8dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -282,7 +283,6 @@
                 android:fontFamily="@font/rubik_regular"
                 android:textSize="20sp"
                 android:textColor="@color/font"
-                android:layout_marginStart="16dp"
                 android:layout_weight="1"/>
 
             <TextView
@@ -302,7 +302,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3"
-            android:layout_marginBottom="32dp">
+            android:layout_marginBottom="20dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -354,8 +354,19 @@
             android:textSize="35sp"
             android:gravity="center"
             android:textColor="@color/font"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="16dp"
             />
+
+    <Button
+        android:id="@+id/button_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:text="@string/what_s_next"
+        android:fontFamily="@font/rubik_regular"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"
+        />
 
         <Button
             android:id="@+id/button_back_dashboard"

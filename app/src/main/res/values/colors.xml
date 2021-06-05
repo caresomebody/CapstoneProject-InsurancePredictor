@@ -14,4 +14,8 @@
     <color name="light_grey">#F2F2F2</color>
     <color name="error">#B00020</color>
     <color name="success">#1C6861</color>
+    <color name="alianz">#002F87</color>
+    <color name="manulife">#15A858</color>
+    <color name="prudential">#FE0C08</color>
+    <color name="aig">#002261</color>
 </resources>

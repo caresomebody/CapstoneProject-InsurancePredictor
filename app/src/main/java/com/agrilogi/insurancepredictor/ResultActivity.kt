@@ -44,5 +44,9 @@ class ResultActivity : AppCompatActivity() {
             binding.calculate.visibility = View.GONE
             binding.progressbar.visibility = View.GONE
         })
+
+        binding.buttonNext.setOnClickListener{
+            startActivity<RecommendedActivity>()
+        }
     }
 }

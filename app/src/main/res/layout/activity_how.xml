@@ -10,6 +10,7 @@
     android:paddingTop="40dp"
     android:paddingEnd="20dp"
     android:paddingBottom="20dp"
+    android:background="@color/background"
     tools:context=".HowActivity">
 
     <TextView
