@@ -20,14 +20,20 @@ interface UserDao {
     @Insert
     fun addUser(vararg user:User)
 
-    @Query("UPDATE users SET age = :age, sex = :sex WHERE email = :email")
-    fun updateAgeSex(age: String, sex: String, email: String)
+    @Query("UPDATE users SET age = :age WHERE email = :email")
+    fun updateAge(age: String, email: String)
+
+    @Query("UPDATE users SET sex = :sex WHERE email = :email")
+    fun updateSex(sex: String, email: String)
 
     @Query("UPDATE users SET height = :height, weight = :weight, bmi = :bmi WHERE email = :email")
     fun updateBMI(height: String, weight: String, bmi: Float, email: String)
 
-    @Query("UPDATE users SET child = :child, location = :location WHERE email = :email")
-    fun updateChill(child: String, location: String, email: String)
+    @Query("UPDATE users SET child = :child WHERE email = :email")
+    fun updateChild(child: String, email: String)
+
+    @Query("UPDATE users SET location = :location WHERE email = :email")
+    fun updateLocation(location: String, email: String)
 
     @Query("UPDATE users SET smoke = :smoke WHERE email = :email")
     fun updateSmoke(smoke: String, email: String)

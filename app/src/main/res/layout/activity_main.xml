@@ -154,7 +154,7 @@
         android:id="@+id/card_history"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:layout_height="67dp"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="8dp"
         app:cardBackgroundColor="@color/white"
         app:cardElevation="10dp"

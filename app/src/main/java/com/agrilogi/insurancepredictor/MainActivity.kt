@@ -61,8 +61,6 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.logout) {
             session.logoutUser()
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
         }
         return super.onOptionsItemSelected(item)
     }

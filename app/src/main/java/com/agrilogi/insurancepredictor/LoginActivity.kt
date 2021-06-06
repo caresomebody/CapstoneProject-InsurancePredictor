@@ -3,6 +3,7 @@ package com.agrilogi.insurancepredictor
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Patterns
 import android.view.View
 import com.agrilogi.insurancepredictor.database.UserDatabase
 import com.agrilogi.insurancepredictor.databinding.ActivityLoginBinding
@@ -25,12 +26,12 @@ class LoginActivity : AppCompatActivity() {
 
     private fun OnClick() {
         binding.buttonLogIn.setOnClickListener {
-            val uname = binding.email.text.toString()
+            val email = binding.email.text.toString()
             val password = binding.password.text.toString()
             var focusView: View? = null
             var cancel = false
 
-            if (TextUtils.isEmpty(uname)){
+            if (TextUtils.isEmpty(email)){
                 binding.email.error = getString(R.string.required)
                 focusView = binding.email
                 cancel = true
@@ -42,12 +43,18 @@ class LoginActivity : AppCompatActivity() {
                 cancel = true
             }
 
+            if (!isValidEmail(email)) {
+                binding.email.error = "Invalid Email Address"
+                focusView = binding.email
+                cancel = true
+            }
+
             if(cancel){
                 focusView?.requestFocus()
             } else {
-                if(userDB.userDao().checkUser(uname, password)){
+                if(userDB.userDao().checkUser(email, password)){
                     session.createLoginSession()
-                    session.createUser(uname, password)
+                    session.createUser(email, password)
                     toDashboard()
                 } else {
                     binding.email.error = getString(R.string.didnt_match)
@@ -65,5 +72,13 @@ class LoginActivity : AppCompatActivity() {
         startActivity<MainActivity>()
         session.createOnBoardSession()
         finish()
+    }
+
+    private fun isValidEmail(target: CharSequence): Boolean {
+        return if (TextUtils.isEmpty(target)) {
+            false
+        } else {
+            Patterns.EMAIL_ADDRESS.matcher(target).matches()
+        }
     }
 }

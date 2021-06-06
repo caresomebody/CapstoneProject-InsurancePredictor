@@ -2,7 +2,9 @@ package com.agrilogi.insurancepredictor.form
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
+import android.view.View
 import android.widget.RadioButton
 import com.agrilogi.insurancepredictor.R
 import com.agrilogi.insurancepredictor.SessionManagement
@@ -15,6 +17,8 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
+import java.math.RoundingMode
+import java.text.DecimalFormat
 import java.util.*
 
 class Form3Activity : AppCompatActivity() {
@@ -36,32 +40,51 @@ class Form3Activity : AppCompatActivity() {
             session = SessionManagement(applicationContext)
             val email = session.user["email"]
             val user = userDB.userDao().getUserByEmail(email.toString())
-            val smokeId: Int = binding.radioGroup.checkedRadioButtonId
-            val checkedSmoke= findViewById<RadioButton>(smokeId)
-            val smoke = checkedSmoke.text.toString().toLowerCase(Locale.ROOT)
+            val height: String= binding.inputHeight.text.toString()
+            val weight: String = binding.inputWeight.text.toString()
+            var focusView: View? = null
 
-            if (smokeId==-1){
-                toast(getString(R.string.havent_chosen))
-            } else {
-                insertToDb(smoke, user.email)
+            val heightValue = height.toFloat() / 100
+            val weightValue = weight.toFloat()
+            val bmi = weightValue / (heightValue * heightValue)
+
+            if (TextUtils.isEmpty(height)){
+                binding.inputHeight.error = getString(R.string.required)
+                focusView = binding.inputHeight
+            }
+
+            if (TextUtils.isEmpty(weight)){
+                binding.inputWeight.error = getString(R.string.required)
+                focusView = binding.inputWeight
+            }
+
+            else{
+                insertToDb(height, weight, roundNumber(bmi), user.email)
                 startActivity<Form4Activity>()
             }
         }
+
         binding.btnBack.setOnClickListener {
             startActivity<Form2Activity>()
         }
     }
 
-    private fun insertToDb(smoke: String, email: String){
+    private fun insertToDb(height: String, weight: String, bmi: Float, email: String){
         compositeDisposable.add(Completable.fromRunnable {
-            userDB.userDao().updateSmoke(smoke, email)
+            userDB.userDao().updateBMI(height, weight, bmi, email)
         }
-            .subscribeOn(Schedulers.computation())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
+                .subscribeOn(Schedulers.computation())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
 
-            }, {
-                Log.d("insertoDB", "Failed")
-            }))
+                }, {
+                    Log.d("insertoDB", "Failed")
+                }))
+    }
+
+    private fun roundNumber(number: Float): Float {
+        val df = DecimalFormat("#.##")
+        df.roundingMode = RoundingMode.CEILING
+        return df.format(number).toFloat()
     }
 }

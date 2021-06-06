@@ -9,6 +9,47 @@
     android:background="@color/background"
     tools:context=".form.Form6Activity">
 
+    <LinearLayout
+        android:id="@+id/calculate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        tools:context=".CalculatingFragment"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/font"
+            android:text="Calculating..."
+            android:gravity="center"
+            android:fontFamily="@font/rubik_medium"
+            android:textSize="35sp"
+            android:layout_marginBottom="4dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/font"
+            android:text="We are calculating your charge based on the answer you gave."
+            android:gravity="center"
+            android:fontFamily="@font/rubik_regular"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
     <TextView
         android:layout_width="250dp"
         android:layout_height="wrap_content"

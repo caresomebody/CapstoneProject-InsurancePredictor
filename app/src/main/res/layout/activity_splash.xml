@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
     android:background="@color/background"
     tools:context=".SplashActivity">
 
     <ImageView
         android:id="@+id/logo"
+        android:layout_margin="16dp"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:src="@drawable/logo"
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:text="@string/app_slogan"
         android:textSize="16sp"
-        android:fontFamily="@font/rubik_medium"
+        android:fontFamily="@font/rubik_light"
         android:textColor="@color/font"
         android:gravity="center"
         android:layout_below="@id/logo"
@@ -31,6 +31,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
         android:text="@string/by_agrilogi"
         android:textSize="16sp"
         android:fontFamily="@font/rubik_medium"

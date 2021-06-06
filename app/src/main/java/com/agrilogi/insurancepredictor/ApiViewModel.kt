@@ -14,10 +14,7 @@ import io.reactivex.Completable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
 import org.json.JSONObject
@@ -51,8 +48,11 @@ class ApiViewModel: ViewModel() {
 
         val jsonObjectString = jsonObject.toString()
         val requestBody = jsonObjectString.toRequestBody("application/json".toMediaTypeOrNull())
+        val exceptionHandler = CoroutineExceptionHandler{_ , throwable->
+            throwable.printStackTrace()
+        }
 
-        CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
             val response = service.getCharge(requestBody)
 
             withContext(Dispatchers.Main) {
@@ -74,9 +74,9 @@ class ApiViewModel: ViewModel() {
         }
     }
 
-    private fun insertToDb(prettyJson: String, email: String) {
+    private fun insertToDb(price: String, email: String) {
         compositeDisposable.add(Completable.fromRunnable {
-            userDB.userDao().updateCharge(prettyJson, email)
+            userDB.userDao().updateCharge(price, email)
         }
             .subscribeOn(Schedulers.computation())
             .observeOn(AndroidSchedulers.mainThread())

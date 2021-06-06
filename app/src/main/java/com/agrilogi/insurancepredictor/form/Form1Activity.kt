@@ -38,28 +38,21 @@ class Form1Activity : AppCompatActivity() {
             val email = session.user["email"]
             val user = userDB.userDao().getUserByEmail(email.toString())
             val age = binding.inputAge.text.toString()
-            val sexId: Int = binding.radioGroup.checkedRadioButtonId
-            val checkedSex = findViewById<RadioButton>(sexId)
-            val sex = checkedSex.text.toString().toLowerCase()
             var focusView: View? = null
 
             if (TextUtils.isEmpty(age)){
                 binding.inputAge.error = getString(R.string.required)
                 focusView = binding.inputAge
-            }
-
-            if (sexId==-1){
-                toast(getString(R.string.havent_chosen))
             } else {
-                    insertToDb(age, sex, user.email)
+                    insertToDb(age, user.email)
                 startActivity<Form2Activity>()
             }
         }
     }
 
-    private fun insertToDb(age: String, sex: String, email: String){
+    private fun insertToDb(age: String, email: String){
         compositeDisposable.add(Completable.fromRunnable {
-            userDB.userDao().updateAgeSex(age, sex, email)
+            userDB.userDao().updateAge(age, email)
         }
             .subscribeOn(Schedulers.computation())
             .observeOn(AndroidSchedulers.mainThread())
