@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.agrilogi.insurancepredictor.database.UserDatabase
 import com.agrilogi.insurancepredictor.databinding.ActivityResultBinding
+import com.agrilogi.insurancepredictor.form.viewmodel.Form1ViewModel
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_result.*
 import org.jetbrains.anko.startActivity
@@ -23,28 +24,23 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.title = getString(R.string.result)
+
+        val model = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(Form1ViewModel::class.java)
+        val user = model.getData(this)
+
+        binding.name.text = user.name
+        binding.sex.text = user.sex
+        binding.age.text = user.age
+        binding.smoking.text = user.smoke
+        binding.bmi.text = user.bmi.toString()
+        binding.children.text = user.child
+        binding.location.text = user.location
+        binding.charge.text = ("$" + user.price.toString())
+        Log.d("ini price", user.price.toString())
+
         button_back_dashboard.setOnClickListener {
             startActivity<MainActivity>()
         }
-        apiViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(ApiViewModel::class.java)
-        apiViewModel.setPredict(this)
-        binding.calculate.visibility = View.VISIBLE
-        binding.progressbar.visibility = View.VISIBLE
-        apiViewModel.getPredict().observe(this, {
-            Log.d("ini it", it.toString())
-            binding.name.text = it.name
-            binding.sex.text = it.sex
-            binding.age.text = it.age
-            binding.smoking.text = it.smoke
-            binding.bmi.text = it.bmi.toString()
-            binding.children.text = it.child
-            binding.location.text = it.location
-            binding.charge.text = ("$" + it.price.toString())
-            Log.d("ini price", it.price.toString())
-            binding.calculate.visibility = View.GONE
-            binding.progressbar.visibility = View.GONE
-        })
-
         binding.buttonNext.setOnClickListener{
             startActivity<RecommendedActivity>()
         }

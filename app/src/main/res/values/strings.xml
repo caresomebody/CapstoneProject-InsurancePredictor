@@ -86,4 +86,6 @@
     <string name="questionnaire_6_area">Questionnaire #6: Area</string>
     <string name="questionnaire_2_sex">Questionnaire #2: Sex</string>
     <string name="what_s_next">What\'s Next</string>
+    <string name="we_are_calculating_your_charge_based_on_the_answer_you_gave">We are calculating your charge based on the answer you gave.</string>
+    <string name="calculating">Calculating...</string>
 </resources>

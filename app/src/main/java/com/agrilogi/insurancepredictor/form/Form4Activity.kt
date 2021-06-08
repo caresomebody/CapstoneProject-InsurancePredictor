@@ -6,12 +6,15 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.RadioButton
+import androidx.lifecycle.ViewModelProvider
 import com.agrilogi.insurancepredictor.R
 import com.agrilogi.insurancepredictor.ResultActivity
 import com.agrilogi.insurancepredictor.SessionManagement
 import com.agrilogi.insurancepredictor.database.ApiInterface
 import com.agrilogi.insurancepredictor.database.UserDatabase
 import com.agrilogi.insurancepredictor.databinding.ActivityForm4Binding
+import com.agrilogi.insurancepredictor.form.viewmodel.Form2ViewModel
+import com.agrilogi.insurancepredictor.form.viewmodel.Form4ViewModel
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonParser
 import io.reactivex.Completable
@@ -32,7 +35,6 @@ import java.util.*
 
 class Form4Activity : AppCompatActivity() {
     private lateinit var binding: ActivityForm4Binding
-    private lateinit var userDB: UserDatabase
     lateinit var session: SessionManagement
     val compositeDisposable = CompositeDisposable()
 
@@ -41,15 +43,13 @@ class Form4Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityForm4Binding.inflate(layoutInflater)
         setContentView(binding.root)
-        userDB = UserDatabase.getInstance(this)!!
         onClick()
     }
 
     private fun onClick() {
         binding.btnNext.setOnClickListener {
-            session = SessionManagement(applicationContext)
-            val email = session.user["email"]
-            val user = userDB.userDao().getUserByEmail(email.toString())
+            val model = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(Form4ViewModel::class.java)
+            val user = model.getData(this)
             val smokeId: Int = binding.radioGroup.checkedRadioButtonId
             val checkedSmoke= findViewById<RadioButton>(smokeId)
             val smoke = checkedSmoke.text.toString().toLowerCase(Locale.ROOT)
@@ -57,25 +57,12 @@ class Form4Activity : AppCompatActivity() {
             if (smokeId==-1){
                 toast(getString(R.string.havent_chosen))
             } else {
-                insertToDb(smoke, user.email)
+                model.insertToDb(smoke, user.email)
                 startActivity<Form5Activity>()
             }
         }
         binding.btnBack.setOnClickListener {
             startActivity<Form3Activity>()
         }
-    }
-
-    private fun insertToDb(smoke: String, email: String){
-        compositeDisposable.add(Completable.fromRunnable {
-            userDB.userDao().updateSmoke(smoke, email)
-        }
-                .subscribeOn(Schedulers.computation())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({
-
-                }, {
-                    Log.d("insertoDB", "Failed")
-                }))
     }
 }

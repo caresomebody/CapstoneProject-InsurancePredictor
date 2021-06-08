@@ -2,22 +2,17 @@ package com.agrilogi.insurancepredictor.form
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
-import android.util.Log
 import android.view.View
 import android.widget.RadioButton
+import androidx.lifecycle.ViewModelProvider
 import com.agrilogi.insurancepredictor.R
 import com.agrilogi.insurancepredictor.SessionManagement
 import com.agrilogi.insurancepredictor.database.UserDatabase
 import com.agrilogi.insurancepredictor.databinding.ActivityForm2Binding
-import io.reactivex.Completable
-import io.reactivex.android.schedulers.AndroidSchedulers
+import com.agrilogi.insurancepredictor.form.viewmodel.Form2ViewModel
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
-import java.math.RoundingMode
-import java.text.DecimalFormat
 
 class Form2Activity : AppCompatActivity() {
     private lateinit var binding: ActivityForm2Binding
@@ -35,9 +30,8 @@ class Form2Activity : AppCompatActivity() {
 
     private fun onClick() {
         binding.btnNext.setOnClickListener {
-            session = SessionManagement(applicationContext)
-            val email = session.user["email"]
-            val user = userDB.userDao().getUserByEmail(email.toString())
+            val model = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(Form2ViewModel::class.java)
+            val user = model.getData(this)
             val sexId: Int = binding.radioGroup.checkedRadioButtonId
             val checkedSex = findViewById<RadioButton>(sexId)
             val sex = checkedSex.text.toString().toLowerCase()
@@ -46,7 +40,7 @@ class Form2Activity : AppCompatActivity() {
             if (sexId==-1){
                 toast(getString(R.string.havent_chosen))
             } else {
-                insertToDb(sex, user.email)
+                model.insertToDb(sex, user.email)
                 startActivity<Form3Activity>()
             }
         }
@@ -54,18 +48,5 @@ class Form2Activity : AppCompatActivity() {
         binding.btnBack.setOnClickListener {
             startActivity<Form1Activity>()
         }
-    }
-
-    private fun insertToDb(sex: String, email: String){
-        compositeDisposable.add(Completable.fromRunnable {
-            userDB.userDao().updateSex(sex, email)
-        }
-                .subscribeOn(Schedulers.computation())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({
-
-                }, {
-                    Log.d("insertoDB", "Failed")
-                }))
     }
 }
