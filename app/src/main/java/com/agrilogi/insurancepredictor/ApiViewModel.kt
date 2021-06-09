@@ -51,8 +51,12 @@ class ApiViewModel: ViewModel() {
         val exceptionHandler = CoroutineExceptionHandler{_ , throwable->
             throwable.printStackTrace()
         }
+        val handler = CoroutineExceptionHandler { _, exception ->
+            Log.d("Network", "Caught $exception")
+        }
 
-        CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
+        CoroutineScope(Dispatchers.IO + exceptionHandler).launch(handler) {
+
             val response = service.getCharge(requestBody)
 
             withContext(Dispatchers.Main) {

@@ -11,7 +11,7 @@
         android:roundIcon="@drawable/logo_square"
         android:supportsRtl="true"
         android:theme="@style/Theme.InsurancePredictor">
-        <activity android:name=".CalculatingActivity"></activity>
+        <activity android:name=".CalculatingActivity"/>
         <activity android:name=".RecommendedActivity" />
         <activity android:name=".form.Form6Activity" />
         <activity android:name=".form.Form5Activity" />

@@ -13,7 +13,7 @@ object ServiceBuilder {
             .build()
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl("https://asia-southeast2-insurance-cost-predictor.cloudfunctions.net/ml-tester") // change this IP for testing by your actual machine IP
+        .baseUrl("https://asia-southeast2-insurance-cost-predictor.cloudfunctions.net/ml-tester")
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
         .build()
