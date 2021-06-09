@@ -1,91 +1,123 @@
 <resources>
-    <string name="app_name">Insurance Predictor</string>
+    //general
+    <string name="app_name">Lifesurance</string>
+    <string name="by_agrilogi">By Agrilogi</string>
+
+    //calculating
+    <string name="calculating">Calculating...</string>
+    <string name="we_are_calculating_your_charge_based_on_the_answer_you_gave">We are calculating your charge based on the answer you gave.</string>
+
+    //login
     <string name="login">Log In</string>
-    <string name="app_slogan">Predict insurance charge in less than 5 minutes.</string>
-    <string name="username">Username</string>
     <string name="input_username">Input Username</string>
-    <string name="password">Password</string>
     <string name="input_password">Input Password</string>
     <string name="welcome_back">Welcome Back</string>
-    <string name="create_account">Create an Account</string>
-    <string name="email">Email</string>
     <string name="input_email">Input Email</string>
-    <string name="sign_up">Sign Up</string>
     <string name="dont_have_account">Don\'t have an account?</string>
+
+    //signin
+    <string name="create_account">Create an Account</string>
+    <string name="sign_up">Sign Up</string>
     <string name="have_an_account">Already have an account?</string>
+    <string name="app_slogan">Predict insurance charge in less than 5 minutes.</string>
+    <string name="input_name">Input your name</string>
+
+    //userdatas
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="sex">Sex</string>
+    <string name="body_mass_index">Body Mass index</string>
+    <string name="smoking">Smoking</string>
+    <string name="children">Children</string>
+    <string name="location">Location</string>
+    <string name="age">Age</string>
+
+    //dashboard
     <string name="let_s_predict_your_insurance_charge_now">Let’s predict your insurance charge now!</string>
     <string name="predict_now">Predict Now</string>
-    <string name="learn_how_app_name_works">Learn How Insurance Predictor Works</string>
-    <string name="how_it_works">How it Works</string>
+    <string name="learn_how_app_name_works">Learn How Lifesurance Works</string>
     <string name="history">History</string>
+    <string name="log_out">Log Out</string>
+    <string name="you_haven_t_predict_anything_yet">you have not made a prediction</string>
+
+    //howitworks
+    <string name="how_it_works">How it Works</string>
+    <string name="welcome_to">Welcome to Lifesurance!</string>
+    <string name="our_goal">Our Goal</string>
+    <string name="goal">Our goal is to shorten the time taken of deciding the cost of insurance by applying machine learning to analyze data and make decisions.</string>
+    <string name="how">Lifesurance predict insurance charge that you will receive by analyzing personal data that you have provided by filling out the form. The data that you give will be processed by a machine learning model to predict an insurance charge you will received.</string>
+
+    //waiting
     <string name="waiting_for_you_to_be_ready">Waiting for you to be ready...</string>
     <string name="questions_about_yourself">You will be asked to answer some questions about yourself</string>
     <string name="i_m_ready">I am Ready</string>
+
+    //form1
     <string name="questionnaire_1_age">Questionnaire #1 : Age</string>
     <string name="_1_how_old_are_you">1. How old are you?</string>
     <string name="input_your_age">Input your age</string>
-    <string name="next">Next</string>
+
+    //form2
+    <string name="questionnaire_2_sex">Questionnaire #2: Sex</string>
     <string name="_2_you_identify_yourself_as">2. You identify yourself as?</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="other">Other</string>
+
+    //form3
     <string name="questionnaire_3_bmi">Questionnaire #3 : BMI</string>
     <string name="how_tall_are_you">3. How tall are you?</string>
     <string name="input_height">Input your height in Cm</string>
     <string name="_2_what_is_your_weight">4. What is your weight?</string>
+    <string name="input_your_weight">Input your weight in Kg</string>
+
+    //form4
     <string name="questionnaire_4_smoke">Questionnaire #4 : Smoke</string>
     <string name="_1_have_you_used_cigarettes">5. Have you used cigarettes, E-cigarettes, pipes, vapor products, snuff, chewing tobacco, nicotine gum or nicotine patches in the past 12 months?</string>
     <string name="no_i_have_not">No</string>
     <string name="yes_i_have">Yes</string>
+
+    //form 5
+    <string name="questionnaire_5_children">Questionnaire #5: Children</string>
     <string name="questionnaire_4_child_area"><![CDATA[Questionnaire #4 : Child & Area]]></string>
     <string name="_1_how_many_children_do_you_have">6. How many children do you have?</string>
     <string name="number_of_your_children">Number of your children</string>
+
+    //form6
+    <string name="questionnaire_6_area">Questionnaire #6: Area</string>
     <string name="_2_where_do_you_live">7. Where do you live?</string>
     <string name="southwest">Southwest</string>
     <string name="southeast">Southeast</string>
     <string name="northwest">Northwest</string>
     <string name="northeast">Northeast</string>
+
+    //formbutton
+    <string name="next">Next</string>
     <string name="submit">SUBMIT</string>
-    <string name="name">Name</string>
-    <string name="input_name">Input your name</string>
+    <string name="back">Back</string>
+
+    //result
+    <string name="result">Result</string>
     <string name="prediction_success">Prediction Success!</string>
-    <string name="name_result">Ali Naufal</string>
-    <string name="sex">Sex</string>
-    <string name="sex_result">Male</string>
     <string name="colon">:</string>
-    <string name="body_mass_index">Body Mass index</string>
+    <string name="sex_result">Male</string>
+    <string name="name_result">Ali Naufal</string>
     <string name="bmi_result">20</string>
-    <string name="smoking">Smoking</string>
     <string name="smoking_result">No</string>
-    <string name="children">Children</string>
     <string name="children_result">0</string>
-    <string name="location">Location</string>
     <string name="northwest_result">Northwest</string>
     <string name="charge_prediction">Charge prediction:</string>
     <string name="charge_result">$2000</string>
     <string name="back_to_dashboard">Back To Dashboard</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="back">Back</string>
-    <string name="log_out">Log Out</string>
-    <string name="input_your_weight">Input your weight in Kg</string>
-    <string name="welcome_to">Welcome to Insurance Predictor!</string>
-    <string name="our_goal">Our Goal</string>
-    <string name="goal">Our goal is to shorten the time taken of deciding the cost of insurance by applying machine learning to analyze data and make decisions.</string>
-    <string name="how">Insurance Predictor predict insurance charge that you will receive by analyzing personal data that you have provided by filling out the form. The data that you give will be processed by a machine learning model to predict an insurance charge you will received.</string>
-    <string name="by_agrilogi">By Agrilogi</string>
-    <string name="age">Age</string>
-    <string name="you_haven_t_predict_anything_yet">you have not made a prediction</string>
+    <string name="what_s_next">What\'s Next</string>
+
+    //alert
     <string name="required">This section is required</string>
     <string name="havent_chosen">You have not chosen anything yet</string>
     <string name="email_used">Email already used</string>
     <string name="success_account">Successfully created an account</string>
     <string name="didnt_match">Username and Password did not match</string>
-    <string name="result">Result</string>
-    <string name="questionnaire_5_children">Questionnaire #5: Children</string>
-    <string name="questionnaire_6_area">Questionnaire #6: Area</string>
-    <string name="questionnaire_2_sex">Questionnaire #2: Sex</string>
-    <string name="what_s_next">What\'s Next</string>
-    <string name="we_are_calculating_your_charge_based_on_the_answer_you_gave">We are calculating your charge based on the answer you gave.</string>
-    <string name="calculating">Calculating...</string>
+
 </resources>

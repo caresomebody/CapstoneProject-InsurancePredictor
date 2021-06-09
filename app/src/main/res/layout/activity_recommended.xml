@@ -1,169 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:background="@color/background"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="20dp"
-    tools:context=".RecommendedActivity">
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/success"
-        android:layout_gravity="center"
-        android:layout_marginBottom="16dp"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Your medical charge is estimated at"
-        android:fontFamily="@font/rubik_medium"
-        android:textSize="16sp"
-        android:gravity="center"
-        android:textColor="@color/font"
-        android:layout_marginBottom="4dp"/>
-
-    <TextView
-        android:id="@+id/charge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="@string/charge_result"
-        android:fontFamily="@font/rubik_medium"
-        android:textSize="40sp"
-        android:gravity="center"
-        android:textColor="@color/font"
-        android:layout_marginBottom="48dp"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Here are the recommended insurance products"
-        android:fontFamily="@font/rubik_medium"
-        android:textSize="18sp"
-        android:gravity="center"
-        android:textColor="@color/secondary"
-        android:layout_marginBottom="20dp"/>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/btn_allianz"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="30dp"
-        app:cardBackgroundColor="@color/alianz"
-        android:layout_marginBottom="16dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_gravity="center_vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/allianz" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/btn_manulife"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="30dp"
-        app:cardBackgroundColor="@color/manulife"
-        android:layout_marginBottom="16dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_gravity="center_vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/manulife" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/btn_prudential"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="30dp"
-        app:cardBackgroundColor="@color/prudential"
-        android:layout_marginBottom="16dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_gravity="center_vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/prudential" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-    android:id="@+id/btn_aig"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardCornerRadius="30dp"
-    app:cardBackgroundColor="@color/aig"
-    android:layout_marginBottom="16dp">
+    android:layout_height="wrap_content">
 
     <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/background"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_gravity="center_vertical">
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        tools:context=".RecommendedActivity">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/aig" />
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/success"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            />
 
-    </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center|bottom"
-        android:orientation="vertical"
-        android:layout_weight="1">
-
-        <Button
-            android:id="@+id/btn_back_dashboard"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginHorizontal="20dp"
-            android:background="@drawable/rounded_button"
-            android:layout_gravity="bottom"
-            android:fontFamily="@font/rubik_regular"
-            android:text="@string/back_to_dashboard"
-            android:textSize="16sp" />
+            android:text="Your medical charge is estimated at"
+            android:fontFamily="@font/rubik_medium"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/font"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/charge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@string/charge_result"
+            android:fontFamily="@font/rubik_medium"
+            android:textSize="40sp"
+            android:gravity="center"
+            android:textColor="@color/font"
+            android:layout_marginBottom="48dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Here are the recommended insurance products"
+            android:fontFamily="@font/rubik_medium"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/secondary"
+            android:layout_marginBottom="20dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_allianz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="30dp"
+            app:cardBackgroundColor="@color/alianz"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/allianz" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_manulife"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="30dp"
+            app:cardBackgroundColor="@color/manulife"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/manulife" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_prudential"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="30dp"
+            app:cardBackgroundColor="@color/prudential"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/prudential" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_aig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="30dp"
+            app:cardBackgroundColor="@color/aig"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/aig" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center|bottom"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn_back_dashboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/rounded_button"
+                android:layout_gravity="bottom"
+                android:fontFamily="@font/rubik_regular"
+                android:text="@string/back_to_dashboard"
+                android:textSize="16sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+
+</ScrollView>
